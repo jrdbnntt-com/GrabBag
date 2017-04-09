@@ -46,10 +46,10 @@ upstream        https://jrdbnntt@github.com/jrdbnntt-com/GrabBag.git (push)
 6. Add & Commit changes
 7. Repeat 5+6 until your feature/change is done
 8. Push branch & commits to your FORK
-9. Make a pull request to merge your branch into upstream master
+9. Make a pull request to merge your branch into upstream master 
 10. Resolve any conflicts if necessary
 11. Complete pull request via Squash & merge (will condense all your changes to 1 commit on upstream)
 12. Checkout master branch and NEVER go back to the branch you used again
 
-Example:
+See `example-pull-request.txt` for a complete example with the git commands.
 
