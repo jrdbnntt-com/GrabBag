@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvGroupID"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="46dp"
+        android:text="*insert group ID*"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tvGroupID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:text="Group ID:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvGroupMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group Members:"
+        android:textSize="20dp"
+        android:layout_above="@+id/listView"
+        android:layout_alignStart="@+id/tvGroupID"
+        android:layout_marginBottom="17dp" />
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:id="@+id/listView"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/bStartGame"
+        android:layout_alignStart="@+id/tvGroupMembers" />
+
+    <Button
+        android:id="@+id/bStartGame"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/listView"
+        android:layout_marginBottom="15dp"
+        android:onClick="clickStart"
+        android:text="Start Game" />
+
+    <Button
+        android:id="@+id/bPlayGame"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="clickPlay"
+        android:text="Play Game"
+        android:layout_alignBaseline="@+id/bStartGame"
+        android:layout_alignBottom="@+id/bStartGame"
+        android:layout_alignEnd="@+id/listView"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:id="@+id/tvGameTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tvGroupMembers"
+        android:layout_below="@+id/tvGroupID"
+        android:layout_marginTop="16dp"
+        android:text="Time Left:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvTimeLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvGameTime"
+        android:layout_alignBottom="@+id/tvGameTime"
+        android:layout_alignStart="@+id/tvGroup"
+        android:text="*insert time left*"
+        android:textSize="15dp" />
+
+</RelativeLayout>

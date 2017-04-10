@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../../extra/jbennett/dev/AndroidStudioProjects/GrabBag/GrabBag.iml" filepath="$PROJECT_DIR$/../../../../extra/jbennett/dev/AndroidStudioProjects/GrabBag/GrabBag.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../extra/jbennett/dev/AndroidStudioProjects/GrabBag/app/app.iml" filepath="$PROJECT_DIR$/../../../../extra/jbennett/dev/AndroidStudioProjects/GrabBag/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GrabBag.iml" filepath="$PROJECT_DIR$/GrabBag.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
