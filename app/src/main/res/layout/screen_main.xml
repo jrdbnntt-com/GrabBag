@@ -33,7 +33,7 @@
         android:layout_height="300dp"
         android:layout_below="@+id/tvAppName"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/money" />
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/bCreateAcct"

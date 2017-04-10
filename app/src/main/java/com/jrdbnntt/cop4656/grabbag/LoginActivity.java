@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     public void clickLogin(View view)
     {
         Intent intent = new Intent(this, GroupScreenActivity.class);
+
         startActivity(intent);
     }
 }

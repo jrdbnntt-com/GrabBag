@@ -16,6 +16,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     public void submitAcct(View view)
     {
         Intent intent = new Intent(this, GroupChoiceActivity.class);
+
         startActivity(intent);
     }
 }

@@ -22,6 +22,7 @@ public class GroupChoiceActivity extends AppCompatActivity {
     public void clickCreateGroup(View view)
     {
         Intent intent = new Intent(this, CreateGroupActivity.class);
+
         startActivity(intent);
     }
 }

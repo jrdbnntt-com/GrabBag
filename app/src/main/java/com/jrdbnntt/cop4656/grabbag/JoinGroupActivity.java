@@ -16,6 +16,7 @@ public class JoinGroupActivity extends AppCompatActivity {
     public void clickJoinGroup(View view)
     {
         Intent intent = new Intent(this, GroupScreenActivity.class);
+
         startActivity(intent);
     }
 }

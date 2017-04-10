@@ -19,6 +19,7 @@ public class GroupScreenActivity extends AppCompatActivity {
         bStartGame = (Button) findViewById(R.id.bStartGame);
         bPlayGame = (Button) findViewById(R.id.bPlayGame);
         tvGroup = (TextView) findViewById(R.id.tvGroup);
+
         //update group ID with generated ID
         Bundle bundle = getIntent().getExtras();
         if(bundle != null)

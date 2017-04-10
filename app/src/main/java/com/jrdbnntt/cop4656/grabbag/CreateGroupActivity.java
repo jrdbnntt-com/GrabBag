@@ -36,7 +36,6 @@ public class CreateGroupActivity extends AppCompatActivity {
             temp.append(alphabet.charAt(rand.nextInt(nums)));
         }
         String generatedID = temp.toString();
-
         return generatedID;
     }
 }

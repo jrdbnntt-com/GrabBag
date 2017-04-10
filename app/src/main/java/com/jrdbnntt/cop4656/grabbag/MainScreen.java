@@ -17,6 +17,7 @@ public class MainScreen extends AppCompatActivity {
     public void clickCreate(View view)
     {
         Intent intent = new Intent(this, CreateAccountActivity.class);
+
         startActivity(intent);
     }
 

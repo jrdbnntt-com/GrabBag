@@ -33,5 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bCreateGroup"
         android:layout_alignParentStart="true"
-        app:srcCompat="@drawable/money" />
+        app:srcCompat="@drawable/logo" />
+
 </RelativeLayout>
