@@ -1,10 +1,12 @@
-package com.jrdbnntt.cop4656.grabbag;
+package com.jrdbnntt.cop4656.grabbag.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.jrdbnntt.cop4656.grabbag.R;
 
 public class GroupScreenActivity extends AppCompatActivity {
 
