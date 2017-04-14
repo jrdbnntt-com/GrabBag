@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:layout_alignBaseline="@+id/tvUsername"
         android:layout_alignBottom="@+id/tvUsername"
         android:layout_alignParentEnd="true"
@@ -44,7 +44,7 @@
         android:layout_alignBottom="@+id/tvPassword"
         android:layout_alignStart="@+id/etUsername"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/bLogin"
