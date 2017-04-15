@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jrdbnntt.cop4656.grabbag">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -25,6 +24,7 @@
         <activity android:name=".app.JoinGroupActivity" />
         <activity android:name=".app.CreateGroupActivity" />
         <activity android:name=".app.GroupScreenActivity" />
+        <activity android:name=".app.AttackScreenActivity"></activity>
     </application>
 
 </manifest>

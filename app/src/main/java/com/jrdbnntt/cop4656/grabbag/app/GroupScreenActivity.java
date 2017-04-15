@@ -1,5 +1,6 @@
 package com.jrdbnntt.cop4656.grabbag.app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,5 +75,7 @@ public class GroupScreenActivity extends AppCompatActivity {
         bStartGame.setEnabled(false);               //disable button once game has been started
         gameInProgress = true;
         bPlayGame.setEnabled(true);
+        Intent intent = new Intent(this, AttackScreenActivity.class);
+        startActivity(intent);
     }
 }
