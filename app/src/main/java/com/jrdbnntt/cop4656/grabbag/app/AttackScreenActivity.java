@@ -1,6 +1,7 @@
 package com.jrdbnntt.cop4656.grabbag.app;
 
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,8 +19,10 @@ public class AttackScreenActivity extends AppCompatActivity {
     Button bSteal;
     ImageView ivStealing;
     CountDownTimer countDownTimer;
+    TextView tvTitle;
     TextView tvCounter;
     TextView tvCoins;
+    MediaPlayer mp;
     int taps=0;     //amount of taps, starts at zero
     int timer=30;   //This is the timer amount, you can change it here
     double stealPercentage=0.1; //This is the percentage that is stolen from the user, change it here
@@ -35,7 +38,15 @@ public class AttackScreenActivity extends AppCompatActivity {
         ivStealing= (ImageView)findViewById(R.id.ivStealing);
         tvCounter= (TextView) findViewById(R.id.tvTimer);
         tvCoins= (TextView) findViewById(R.id.tvCoins);
+        tvTitle = (TextView) findViewById(R.id.tvStealingTitle);
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.smw_coin);
 
+        if(isStealing) {
+            tvTitle.setText("Tap to steal!");
+        }
+        else {
+            tvTitle.setText("Tap to defend!");
+        }
 
         countDownTimer = new CountDownTimer((timer+1)*1000,1000 ){
 
@@ -66,9 +77,12 @@ public class AttackScreenActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    ivStealing.setImageResource(R.drawable.stealing2);
+                    ivStealing.setImageResource(R.drawable.grabbing);
+                    mp.start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    ivStealing.setImageResource(R.drawable.stealing1);
+                    ivStealing.setImageResource(R.drawable.grabbing2);
+                    mp.pause();
+                    mp.seekTo(0);
                     taps++;
                     tvCoins.setText("Coins stolen: "+(int)(taps*.1));
                 }
