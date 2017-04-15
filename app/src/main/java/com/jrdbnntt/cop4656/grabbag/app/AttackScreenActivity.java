@@ -20,7 +20,11 @@ public class AttackScreenActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
     TextView tvCounter;
     TextView tvCoins;
-    int taps=0;
+    int taps=0;     //amount of taps, starts at zero
+    int timer=30;   //This is the timer amount, you can change it here
+    double stealPercentage=0.1; //This is the percentage that is stolen from the user, change it here
+    int coinsStolen = 0;
+    boolean isStealing =true; //If isStealing is false then it must be defending, change it here
 
 
     @Override
@@ -33,7 +37,7 @@ public class AttackScreenActivity extends AppCompatActivity {
         tvCoins= (TextView) findViewById(R.id.tvCoins);
 
 
-        countDownTimer = new CountDownTimer(31*1000,1000 ){
+        countDownTimer = new CountDownTimer((timer+1)*1000,1000 ){
 
             @Override
             public void onTick(long l) {
@@ -41,10 +45,17 @@ public class AttackScreenActivity extends AppCompatActivity {
             }
 
             @Override
+            //This is the method that runs when the timer is finished
             public void onFinish() {
-                bSteal.setEnabled(false);
-                tvCounter.setText("Taps: "+taps);
-                tvCoins.setText("Coins stolen: "+(int)(taps*.1));
+                if (isStealing) {
+                    bSteal.setEnabled(false);
+                    tvCounter.setText("Taps: " + taps); //Outputting the amount of taps
+                    coinsStolen = (int) (taps * stealPercentage);       //This is the coin amount, store to database
+                    tvCoins.setText("Coins stolen: " + coinsStolen); //setting the amount of coins stolen
+                }
+                else {
+                    //Code for defending
+                }
 
             }
         }.start();
