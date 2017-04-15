@@ -28,7 +28,7 @@ public class AttackScreenActivity extends AppCompatActivity {
     double stealPercentage=0.1; //This is the percentage that is stolen from the user, change it here
     int coinsStolen = 0;
     boolean isStealing =true; //If isStealing is false then it must be defending, change it here
-
+    boolean played=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +78,17 @@ public class AttackScreenActivity extends AppCompatActivity {
             public boolean onTouch(View view, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     ivStealing.setImageResource(R.drawable.grabbing);
-                    mp.start();
+                    if(played) {
+                        mp.pause();
+                        mp.seekTo(0);
+                        mp.start();
+                    }
+                    else {
+                        mp.start();
+                        played=true;
+                    }
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     ivStealing.setImageResource(R.drawable.grabbing2);
-                    mp.pause();
-                    mp.seekTo(0);
                     taps++;
                     tvCoins.setText("Coins stolen: "+(int)(taps*.1));
                 }
