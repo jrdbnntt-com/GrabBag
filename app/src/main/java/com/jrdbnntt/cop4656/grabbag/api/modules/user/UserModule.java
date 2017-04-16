@@ -26,7 +26,7 @@ public class UserModule extends ApiModule {
         api.sendPost("/user/register", req, RegisterResponse.class, null, res, err);
     }
 
-    public void login(
+    public void logIn(
             LoginRequest req,
             Response.Listener<EmptyResponse> res,
             Response.ErrorListener err
@@ -34,7 +34,7 @@ public class UserModule extends ApiModule {
         api.sendPost("/user/login", req, EmptyResponse.class, null, res, err);
     }
 
-    public void login(
+    public void logOut(
             Response.Listener<EmptyResponse> res,
             Response.ErrorListener err
     ) {
