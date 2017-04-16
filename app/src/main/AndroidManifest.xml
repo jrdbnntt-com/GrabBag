@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.CreateAccountActivity" />
+        <activity android:name=".app.CreateAccountActivity" android:label="Create Account" />
         <activity android:name=".app.LoginActivity" />
         <activity android:name=".app.GroupChoiceActivity" />
         <activity android:name=".app.JoinGroupActivity" />

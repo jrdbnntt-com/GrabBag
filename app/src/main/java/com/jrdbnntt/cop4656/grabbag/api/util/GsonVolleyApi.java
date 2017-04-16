@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.jrdbnntt.cop4656.grabbag.api.util.data.GsonObject;
 
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public abstract class GsonVolleyApi {
         this.context = context;
     }
 
-    public <Res> void sendGet(
+    public <Res extends GsonObject> void sendGet(
             String localUrl,
             Class<Res> responseClass,
             Map<String, String> headers,
@@ -35,7 +36,7 @@ public abstract class GsonVolleyApi {
         VolleyManager.getInstance(context).addToRequestQueue(request);
     }
 
-    public <Req, Res> void sendPost(
+    public <Req extends GsonObject, Res extends GsonObject> void sendPost(
             String localUrl,
             Req requestObject,
             Class<Res> responseClass,
@@ -50,7 +51,7 @@ public abstract class GsonVolleyApi {
         VolleyManager.getInstance(context).addToRequestQueue(request);
     }
 
-    public <Req, Res> void sendPost(
+    public <Req extends GsonObject, Res extends GsonObject> void sendPost(
             String localUrl,
             String requestJson,
             Class<Res> responseClass,
