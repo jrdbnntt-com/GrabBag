@@ -63,11 +63,10 @@ public class GsonVolleyRequest<Res> extends Request<Res> {
 
 
     @Override
-    protected VolleyError parseNetworkError(VolleyError volleyError) {
-        if (volleyError.networkResponse != null && volleyError.networkResponse.data != null){
-            volleyError = new VolleyError(new String(volleyError.networkResponse.data));
+    protected VolleyError parseNetworkError(VolleyError err) {
+        if (err.networkResponse != null && err.networkResponse.data != null){
+            err = new VolleyError(new String(err.networkResponse.data), err);
         }
-
-        return volleyError;
+        return err;
     }
 }
