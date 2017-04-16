@@ -1,7 +1,18 @@
 FSU Mobile Programming (COP4656) Group Project 2: Grab Bag
 ===========================================================================
+The game is heavily inspired by "Grab Bag", a mini-game from the original Mario Party. In the original
+game, you can steal a set amount of coins from an opponent to add to your own stash by getting up
+behind them. https://www.youtube.com/watch?v=c-HBQpW41EA
 
+The primary difference between the Mario Party mini-game and this game is that this version of Grab
+Bag is an Augmented Reality Game, in the loosest sense of the term. Like Pokemon Go, this game involves
+interacting with other players in the real world, and you have to be within a certain distance to
+attempt a steal from another player. With the two traits combined, the game is somewhat reminiscient
+of live-action games such as Humans vs. Zombies where gameplay is over a week, with players trying
+to subvert and defeat each other while going about their normal activities. https://humansvszombies.org/
 
+This gives a new angle to the party game, transforming a game designed to be a short, quick blast
+into a game that spans dozens of hours where your goal is to outthink and outlast your enemies.
 
 # Contributing
 All your work should be done on your own fork of this repository. When you are done with something and have pushed it to your fork, you make a pull request to update the upstream repository. Do not work on your master branch, but a side branch. Your master branch is for pulling the latest version from upstream and for making branches off of it.
