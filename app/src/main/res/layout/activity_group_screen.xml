@@ -52,7 +52,8 @@
         android:layout_alignStart="@+id/listView"
         android:layout_marginBottom="15dp"
         android:onClick="clickStart"
-        android:text="Start Game" />
+        android:text="Start Game"
+        android:layout_alignEnd="@+id/tvGameTime" />
 
     <Button
         android:id="@+id/bPlayGame"
@@ -60,10 +61,8 @@
         android:layout_height="wrap_content"
         android:onClick="clickPlay"
         android:text="Play Game"
-        android:layout_alignBaseline="@+id/bStartGame"
         android:layout_alignBottom="@+id/bStartGame"
-        android:layout_alignEnd="@+id/listView"
-        android:layout_marginEnd="15dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/tvGameTime"
@@ -84,5 +83,14 @@
         android:layout_alignStart="@+id/tvGroup"
         android:text="*insert time left*"
         android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/bScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/listView"
+        android:layout_alignTop="@+id/bPlayGame"
+        android:text="Find Players"
+        android:onClick="clickScan"/>
 
 </RelativeLayout>
