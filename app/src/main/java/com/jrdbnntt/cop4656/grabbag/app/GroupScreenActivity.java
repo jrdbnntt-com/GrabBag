@@ -78,4 +78,10 @@ public class GroupScreenActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AttackScreenActivity.class);
         startActivity(intent);
     }
+
+    public void clickScan(View view)
+    {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
 }
