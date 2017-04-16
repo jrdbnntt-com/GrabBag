@@ -50,40 +50,44 @@ public class GrabBagApi extends GsonVolleyApi {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(this.getClass().getName(), error.getMessage());
-
-                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context)
-                        .setIconAttribute(android.R.attr.alertDialogIcon)
-                        .setPositiveButton("Ok", null);
-
-                // Build the dialog based on the response
-                NetworkResponse response = getNetworkResponse(error);
-                if (response == null) {
-                    dialogBuilder.setTitle("Error");
-                    dialogBuilder.setMessage("Network error");
-                } else {
-                    switch (response.statusCode) {
-                        case 400:   // Bad request (validation probably failed)
-                            Gson gson = new Gson();
-                            ErrorResponse res = gson.fromJson(
-                                    error.getMessage(), ErrorResponse.class);
-                            dialogBuilder.setTitle(res.cause);
-                            dialogBuilder.setMessage(res.message);
-                            break;
-                        case 401:   // Unauthorized, possibly not logged in
-                            dialogBuilder.setTitle("Unauthorized");
-                            dialogBuilder.setMessage("You do not have permission to do that");
-                            break;
-                        default:
-                            dialogBuilder.setTitle("Unknown Error");
-                            dialogBuilder.setMessage(error.getMessage());
-                    }
-                }
-
-                dialogBuilder.create().show();
+                buildErrorDialog(context, error).show();
             }
 
         };
+    }
+
+    public AlertDialog buildErrorDialog(Context context, VolleyError error) {
+        Log.e(this.getClass().getName(), error.getMessage());
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context)
+                .setIconAttribute(android.R.attr.alertDialogIcon)
+                .setPositiveButton("Ok", null);
+
+        // Build the dialog based on the response
+        NetworkResponse response = getNetworkResponse(error);
+        if (response == null) {
+            dialogBuilder.setTitle("Error");
+            dialogBuilder.setMessage("Network error");
+        } else {
+            switch (response.statusCode) {
+                case 400:   // Bad request (validation probably failed)
+                    Gson gson = new Gson();
+                    ErrorResponse res = gson.fromJson(
+                            error.getMessage(), ErrorResponse.class);
+                    dialogBuilder.setTitle(res.cause);
+                    dialogBuilder.setMessage(res.message);
+                    break;
+                case 401:   // Unauthorized, possibly not logged in
+                    dialogBuilder.setTitle("Unauthorized");
+                    dialogBuilder.setMessage("You do not have permission to do that");
+                    break;
+                default:
+                    dialogBuilder.setTitle("Unknown Error");
+                    dialogBuilder.setMessage(error.getMessage());
+            }
+        }
+
+        return dialogBuilder.create();
     }
 
     public NetworkResponse getNetworkResponse(VolleyError error) {
