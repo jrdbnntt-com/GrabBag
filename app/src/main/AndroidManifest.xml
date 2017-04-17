@@ -39,6 +39,24 @@
         <activity android:name=".app.GroupScreenActivity" />
         <activity android:name=".app.AttackScreenActivity" />
         <activity android:name=".app.MainScreen" />
+
+        <service
+            android:name=".GrabBagFirebaseMsgServ"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".GrabBagInstIDServ"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -54,6 +72,7 @@
         <activity
             android:name=".app.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
+
     </application>
 
 </manifest>
