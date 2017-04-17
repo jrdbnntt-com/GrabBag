@@ -2,18 +2,10 @@ package com.jrdbnntt.cop4656.grabbag.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.google.gson.Gson;
 import com.jrdbnntt.cop4656.grabbag.R;
-import com.jrdbnntt.cop4656.grabbag.api.GrabBagApi;
-import com.jrdbnntt.cop4656.grabbag.api.modules.test.data.SimplePostTestRequest;
-import com.jrdbnntt.cop4656.grabbag.api.modules.test.data.SimplePostTestResponse;
-import com.jrdbnntt.cop4656.grabbag.api.modules.test.data.get.SimpleGetTestResponse;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -24,7 +16,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void clickCreate(View view) {
-        Intent intent = new Intent(this, CreateAccountActivity.class);
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
 

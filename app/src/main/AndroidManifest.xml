@@ -19,26 +19,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" -->
         <activity
-            android:name=".app.SplashScreenActivity"
-            android:theme="@style/AppTheme1">
+            android:name=".app.SplashLoginActivity"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.CreateAccountActivity"
-            android:label="Create Account" />
-        <activity android:name=".app.LoginActivity" />
-        <activity android:name=".app.GroupChoiceActivity" />
+            android:name=".app.RegisterActivity"
+            android:label="Account Registration" />
+
+        <activity android:name=".app.GameChoiceActivity" />
         <activity android:name=".app.JoinGroupActivity" />
         <activity android:name=".app.CreateGroupActivity" />
-        <activity android:name=".app.GroupScreenActivity" />
+        <activity android:name=".app.GameSummaryActivity" />
         <activity android:name=".app.AttackScreenActivity" />
         <activity android:name=".app.MainScreen" />
+
+
+        <activity
+            android:name=".app.MapsActivity"
+            android:label="@string/title_activity_maps"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -51,9 +55,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".app.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+
     </application>
 
 </manifest>

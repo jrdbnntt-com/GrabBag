@@ -24,7 +24,7 @@ public class JoinGroupActivity extends AppCompatActivity {
     {
         if(true) //etEnterGroupID) //if group ID in DB, add this user to the group
         {
-            Intent intent = new Intent(this, GroupScreenActivity.class);
+            Intent intent = new Intent(this, GameSummaryActivity.class);
             startActivity(intent);
         }
         else

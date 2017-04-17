@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-public class GroupScreenActivity extends AppCompatActivity {
+public class GameSummaryActivity extends AppCompatActivity {
 
     boolean gameInProgress = false;         //needs to be replaced with a boolean from DB if game is in progress
     Button bStartGame, bPlayGame;

@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.jrdbnntt.cop4656.grabbag.R;
 import com.jrdbnntt.cop4656.grabbag.api.GrabBagApi;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.LoginRequest;
@@ -45,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         api.getUserModule().logIn(req, new Response.Listener<EmptyResponse>() {
             @Override
             public void onResponse(EmptyResponse response) {
-                Intent intent = new Intent(getApplicationContext(), GroupScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), GameSummaryActivity.class);
                 startActivity(intent);
             }
         }, api.dialogErrorListener(this));

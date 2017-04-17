@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-public class GroupChoiceActivity extends AppCompatActivity {
+public class GameChoiceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

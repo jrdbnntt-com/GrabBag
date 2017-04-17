@@ -12,7 +12,7 @@ import java.util.Map;
  * A general API class which combines Gson & Volley for GET/POST requests
  */
 
-public abstract class GsonVolleyApi {
+public abstract class   GsonVolleyApi {
 
     private String baseUrl;
     private Context context;

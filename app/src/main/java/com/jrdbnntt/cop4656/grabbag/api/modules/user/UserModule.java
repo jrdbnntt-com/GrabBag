@@ -5,6 +5,7 @@ import com.jrdbnntt.cop4656.grabbag.api.GrabBagApi;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.LoginRequest;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.RegisterRequest;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.RegisterResponse;
+import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.get.SummaryResponse;
 import com.jrdbnntt.cop4656.grabbag.api.util.ApiModule;
 import com.jrdbnntt.cop4656.grabbag.api.util.data.EmptyResponse;
 
@@ -39,5 +40,12 @@ public class UserModule extends ApiModule {
             Response.ErrorListener err
     ) {
         api.sendGet("/user/logout", EmptyResponse.class, null, res, err);
+    }
+
+    public void getSummary(
+            Response.Listener<SummaryResponse> res,
+            Response.ErrorListener err
+    ) {
+        api.sendGet("/user/get/summary", SummaryResponse.class, null, res, err);
     }
 }

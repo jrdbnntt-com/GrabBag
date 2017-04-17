@@ -8,9 +8,6 @@ import android.widget.EditText;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-import java.util.Random;
-import java.lang.StringBuilder;
-
 public class CreateGroupActivity extends AppCompatActivity {
 
     EditText etGroupID;
@@ -24,7 +21,7 @@ public class CreateGroupActivity extends AppCompatActivity {
     public void clickCreateGroup(View view)
     {
         Bundle bundle = new Bundle();
-        Intent intent = new Intent(this, GroupScreenActivity.class);
+        Intent intent = new Intent(this, GameSummaryActivity.class);
         String genID = etGroupID.toString();
         if(true)//genID not in DB) //create the group
         {
