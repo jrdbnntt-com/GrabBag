@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.jrdbnntt.cop4656.grabbag.R;
 
 public class CreateGameActivity extends AppCompatActivity {
@@ -23,6 +24,11 @@ public class CreateGameActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         Intent intent = new Intent(this, GameSummaryActivity.class);
         String genID = etGroupID.toString();
+
+        //TODO: Finalize integration. This should theoretically work.
+        //Calling "subscribeToTopic" for a topic that doesn't exist should create it.
+        //FirebaseMessaging.getInstance().subscribeToTopic(genID);
+
         if(true)//genID not in DB) //create the group
         {
             bundle.putString("ID", genID);

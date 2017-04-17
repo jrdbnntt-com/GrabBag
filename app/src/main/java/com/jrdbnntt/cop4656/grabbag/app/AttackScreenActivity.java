@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-import static java.security.AccessController.getContext;
 
 public class AttackScreenActivity extends AppCompatActivity {
 
@@ -33,7 +32,7 @@ public class AttackScreenActivity extends AppCompatActivity {
     MediaPlayer mp;
 
 
-    Notification notification;
+   // Notification notification;
 
     int taps=0;     //amount of taps, starts at zero
     int timer=30;   //This is the timer amount, you can change it here

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.jrdbnntt.cop4656.grabbag.R;
 
 public class JoinGameActivity extends AppCompatActivity {
