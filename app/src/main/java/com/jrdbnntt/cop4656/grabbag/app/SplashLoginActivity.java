@@ -78,7 +78,7 @@ public class SplashLoginActivity extends AppCompatActivity {
      * When the user is logged in, move to the main activity
      */
     private void continueToMain() {
-        Intent intent = new Intent(getApplicationContext(), MainScreen.class);
+        Intent intent = new Intent(getApplicationContext(), MainNavActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();

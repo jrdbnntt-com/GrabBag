@@ -18,30 +18,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".app.SplashLoginActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".app.RegisterActivity"
             android:label="Account Registration" />
-
         <activity android:name=".app.GameChoiceActivity" />
-        <activity android:name=".app.JoinGroupActivity" />
-        <activity android:name=".app.CreateGroupActivity" />
+        <activity android:name=".app.JoinGameActivity" />
+        <activity android:name=".app.CreateGameActivity" />
         <activity android:name=".app.GameSummaryActivity" />
         <activity android:name=".app.AttackScreenActivity" />
         <activity android:name=".app.MainScreen" />
-
-
         <activity
             android:name=".app.MapsActivity"
-            android:label="@string/title_activity_maps"/>
+            android:label="@string/title_activity_maps" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -55,7 +52,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
+        <activity
+            android:name=".app.MainNavActivity"
+            android:label="@string/title_activity_main_nav"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

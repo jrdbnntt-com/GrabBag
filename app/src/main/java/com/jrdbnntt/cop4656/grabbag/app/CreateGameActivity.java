@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-public class CreateGroupActivity extends AppCompatActivity {
+public class CreateGameActivity extends AppCompatActivity {
 
     EditText etGroupID;
     @Override

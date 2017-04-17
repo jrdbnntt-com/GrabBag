@@ -8,4 +8,17 @@
     <string name="first_name">First Name</string>
     <string name="log_in">Log in</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="title_activity_main_nav">Grab Bag</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_log_out">Log out</string>
+    <string name="action_join_game">Join Game</string>
+    <string name="action_create_game">Create Game</string>
+    <string name="current_games">Current Games</string>
+    <string name="search">Search</string>
+    <string name="player_scanner">Player Scanner</string>
+    <string name="other">Other</string>
 </resources>

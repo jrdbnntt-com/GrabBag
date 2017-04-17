@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-public class JoinGroupActivity extends AppCompatActivity {
+public class JoinGameActivity extends AppCompatActivity {
 
     EditText etEnterGroupId;
 
