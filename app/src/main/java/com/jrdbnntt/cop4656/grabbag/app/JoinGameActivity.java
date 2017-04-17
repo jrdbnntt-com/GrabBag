@@ -7,31 +7,37 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Response;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.jrdbnntt.cop4656.grabbag.R;
+import com.jrdbnntt.cop4656.grabbag.api.GrabBagApi;
+import com.jrdbnntt.cop4656.grabbag.api.modules.game.data.JoinRequest;
+import com.jrdbnntt.cop4656.grabbag.api.modules.game.data.JoinResponse;
 
 public class JoinGameActivity extends AppCompatActivity {
 
     EditText etEnterGroupId;
+    GrabBagApi api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_group);
         etEnterGroupId = (EditText) findViewById(R.id.etEnterGroupId);
+        api = new GrabBagApi(this);
     }
 
     public void clickJoinGroup(View view)
     {
-        if(true) //etEnterGroupID) //if group ID in DB, add this user to the group
-        {
-            Intent intent = new Intent(this, GameSummaryActivity.class);
-            startActivity(intent);
-        }
-        else
-        {
-            Toast.makeText(this, "Group ID does not exist.", Toast.LENGTH_LONG).show();
-            etEnterGroupId.setText("");        //reset group ID
-        }
+        JoinRequest req = new JoinRequest();
+        req.game_join_code = etEnterGroupId.getText().toString().trim();
+        api.getGameModule().join(req, new Response.Listener<JoinResponse>() {
+            @Override
+            public void onResponse(JoinResponse response) {
+                Intent intent = new Intent(getApplicationContext(), GameSummaryActivity.class);
+                intent.putExtra("game_id", response.game_id);
+                startActivity(intent);
+            }
+        }, api.dialogErrorListener(this));
     }
 }

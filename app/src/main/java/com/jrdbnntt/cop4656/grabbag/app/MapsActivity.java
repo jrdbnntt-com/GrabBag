@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.android.volley.Response;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -26,6 +27,11 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.jrdbnntt.cop4656.grabbag.R;
+import com.jrdbnntt.cop4656.grabbag.api.GrabBagApi;
+import com.jrdbnntt.cop4656.grabbag.api.modules.game.data.FindNearbyPlayersRequest;
+import com.jrdbnntt.cop4656.grabbag.api.modules.game.data.FindNearbyPlayersResponse;
+import com.jrdbnntt.cop4656.grabbag.api.modules.game.data.StartRequest;
+import com.jrdbnntt.cop4656.grabbag.api.util.data.EmptyResponse;
 
 public class MapsActivity extends AppCompatActivity
         implements
@@ -49,7 +55,8 @@ public class MapsActivity extends AppCompatActivity
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     private Location mLastKnownLocation;
-    private CameraPosition mCameraPosition;
+
+    private GrabBagApi api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,8 @@ public class MapsActivity extends AppCompatActivity
                 .addApi(LocationServices.API)
                 .build();
         mGoogleApiClient.connect();
+
+        api = new GrabBagApi(this);
     }
 
     /**
@@ -113,6 +122,24 @@ public class MapsActivity extends AppCompatActivity
         updateLocationUI();
         getDeviceLocation();
 
+        if (mLastKnownLocation != null) {
+            FindNearbyPlayersRequest request = new FindNearbyPlayersRequest();
+            request.game_id = getIntent().getIntExtra("game_id", 0);
+            request.location_lat = Round(mLastKnownLocation.getLatitude());
+            request.location_lng = Round(mLastKnownLocation.getLongitude());
+            api.getGameModule().findNearbyPlayers(request, new Response.Listener<FindNearbyPlayersResponse>() {
+                @Override
+                public void onResponse(FindNearbyPlayersResponse response) {
+                    com.jrdbnntt.cop4656.grabbag.api.modules.game.data.FindNearbyPlayersResponse.Location north = response.cardinal_spread.north;
+                    LatLng point = new LatLng(north.lat, north.lng);
+                    mMap.addMarker(new MarkerOptions()
+                            .position(point)
+                            .title("North"));
+                }
+            }, api.dialogErrorListener(this));
+        }
+
+
         LatLng loc = new LatLng(mLastKnownLocation.getLatitude(),
                 mLastKnownLocation.getLongitude());
         mMap.addMarker(new MarkerOptions()
@@ -161,9 +188,7 @@ public class MapsActivity extends AppCompatActivity
         }
 
         // Set the map's camera position to the current location of the device.
-        if (mCameraPosition != null) {
-            mMap.moveCamera(CameraUpdateFactory.newCameraPosition(mCameraPosition));
-        } else if (mLastKnownLocation != null) {
+        if (mLastKnownLocation != null) {
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                     new LatLng(mLastKnownLocation.getLatitude(),
                             mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
@@ -228,6 +253,10 @@ public class MapsActivity extends AppCompatActivity
             mMap.getUiSettings().setMyLocationButtonEnabled(false);
             mLastKnownLocation = null;
         }
+    }
+
+    public double Round(double val) {
+        return (double)Math.round(val * 100000d) / 100000d;
     }
 
 }
