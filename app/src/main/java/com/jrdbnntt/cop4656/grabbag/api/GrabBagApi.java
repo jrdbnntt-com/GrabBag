@@ -9,6 +9,8 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
+import com.jrdbnntt.cop4656.grabbag.api.modules.game.GameModule;
+import com.jrdbnntt.cop4656.grabbag.api.modules.player.PlayerModule;
 import com.jrdbnntt.cop4656.grabbag.api.modules.test.TestModule;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.UserModule;
 import com.jrdbnntt.cop4656.grabbag.api.util.GsonVolleyApi;
@@ -25,6 +27,8 @@ public class GrabBagApi extends GsonVolleyApi {
 
     private TestModule testModule;
     private UserModule userModule;
+    private GameModule gameModule;
+    private PlayerModule playerModule;
 
     public GrabBagApi(Context context) {
         super(BASE_URL, context);
@@ -44,6 +48,21 @@ public class GrabBagApi extends GsonVolleyApi {
         }
         return userModule;
     }
+
+    public GameModule getGameModule() {
+        if (gameModule == null) {
+            gameModule = new GameModule(this);
+        }
+        return gameModule;
+    }
+
+    public PlayerModule getPlayerModule() {
+        if (playerModule == null) {
+            playerModule = new PlayerModule(this);
+        }
+        return playerModule;
+    }
+
 
     public Response.ErrorListener dialogErrorListener(final Context context) {
         return new Response.ErrorListener() {
