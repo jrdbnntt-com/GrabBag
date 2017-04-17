@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.jrdbnntt.cop4656.grabbag.R;
 
-public class GroupChoiceActivity extends AppCompatActivity {
+public class GameChoiceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +17,13 @@ public class GroupChoiceActivity extends AppCompatActivity {
 
     public void clickJoinGroup(View view)
     {
-        Intent intent = new Intent(this, JoinGroupActivity.class);
+        Intent intent = new Intent(this, JoinGameActivity.class);
         startActivity(intent);
     }
 
     public void clickCreateGroup(View view)
     {
-        Intent intent = new Intent(this, CreateGroupActivity.class);
+        Intent intent = new Intent(this, CreateGameActivity.class);
         startActivity(intent);
     }
 }

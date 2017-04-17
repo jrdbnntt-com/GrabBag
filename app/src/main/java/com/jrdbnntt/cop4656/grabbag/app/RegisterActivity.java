@@ -13,7 +13,7 @@ import com.jrdbnntt.cop4656.grabbag.api.GrabBagApi;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.RegisterRequest;
 import com.jrdbnntt.cop4656.grabbag.api.modules.user.data.RegisterResponse;
 
-public class CreateAccountActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText etUsername, etPassword, etFirstName, etLastName, etEmail;
 
@@ -43,7 +43,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             public void onResponse(RegisterResponse response) {
                 Intent intent;
                 if (response.logged_in) {
-                    intent = new Intent(getApplicationContext(), GroupChoiceActivity.class);
+                    intent = new Intent(getApplicationContext(), GameChoiceActivity.class);
                 } else {
                     intent = new Intent(getApplicationContext(), LoginActivity.class);
                 }

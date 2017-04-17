@@ -9,10 +9,7 @@ import android.widget.EditText;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.jrdbnntt.cop4656.grabbag.R;
 
-import java.util.Random;
-import java.lang.StringBuilder;
-
-public class CreateGroupActivity extends AppCompatActivity {
+public class CreateGameActivity extends AppCompatActivity {
 
     EditText etGroupID;
     @Override
@@ -25,7 +22,7 @@ public class CreateGroupActivity extends AppCompatActivity {
     public void clickCreateGroup(View view)
     {
         Bundle bundle = new Bundle();
-        Intent intent = new Intent(this, GroupScreenActivity.class);
+        Intent intent = new Intent(this, GameSummaryActivity.class);
         String genID = etGroupID.toString();
 
         //TODO: Finalize integration. This should theoretically work.

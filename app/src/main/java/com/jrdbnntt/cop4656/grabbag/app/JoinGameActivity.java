@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.jrdbnntt.cop4656.grabbag.R;
 
-public class JoinGroupActivity extends AppCompatActivity {
+public class JoinGameActivity extends AppCompatActivity {
 
     EditText etEnterGroupId;
 
@@ -25,13 +25,8 @@ public class JoinGroupActivity extends AppCompatActivity {
     {
         if(true) //etEnterGroupID) //if group ID in DB, add this user to the group
         {
-            Intent intent = new Intent(this, GroupScreenActivity.class);
-
-            //TODO: Finalize integration with backend.
-            //If true, subscribes the user to the topic that would have been created by the creator.
-           //String genID = etEnterGroupId.toString();
-            //FirebaseMessaging.getInstance().subscribeToTopic(genID);
-            //startActivity(intent);
+            Intent intent = new Intent(this, GameSummaryActivity.class);
+            startActivity(intent);
         }
         else
         {

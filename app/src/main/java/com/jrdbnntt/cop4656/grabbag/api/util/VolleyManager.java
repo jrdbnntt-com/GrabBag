@@ -14,6 +14,9 @@ import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.CookieStore;
+import java.net.HttpCookie;
+import java.net.URI;
+import java.util.List;
 
 /**
  * Singleton for managing requests
@@ -65,8 +68,8 @@ public class VolleyManager {
     }
 
     protected void configureCookieHandler() {
-        CookieManager manager = new CookieManager();
-        manager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+        CookieStore cookieStore = new PersistentCookieStore(mContext);
+        CookieManager manager = new CookieManager(cookieStore, CookiePolicy.ACCEPT_ALL);
         CookieHandler.setDefault(manager);
     }
 
