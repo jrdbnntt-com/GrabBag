@@ -10,6 +10,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+import java.net.CookieStore;
+
 /**
  * Singleton for managing requests
  * https://developer.android.com/training/volley/requestqueue.html
@@ -40,6 +45,8 @@ public class VolleyManager {
                 cache.put(url, bitmap);
             }
         });
+
+        configureCookieHandler();
     }
 
     public static synchronized VolleyManager getInstance(Context context) {
@@ -55,6 +62,12 @@ public class VolleyManager {
             mRequestQueue = Volley.newRequestQueue(mContext.getApplicationContext());
         }
         return mRequestQueue;
+    }
+
+    protected void configureCookieHandler() {
+        CookieManager manager = new CookieManager();
+        manager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+        CookieHandler.setDefault(manager);
     }
 
     public <T> void addToRequestQueue(Request<T> req) {
