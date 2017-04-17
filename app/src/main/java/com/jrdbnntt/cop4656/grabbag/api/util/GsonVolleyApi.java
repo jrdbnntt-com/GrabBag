@@ -36,6 +36,15 @@ public abstract class GsonVolleyApi {
         VolleyManager.getInstance(context).addToRequestQueue(request);
     }
 
+    public <Res extends GsonObject> void sendGet(
+            String localUrl,
+            Class<Res> responseClass,
+            Response.Listener<Res> responseListener,
+            Response.ErrorListener errorListener
+    ) {
+        sendGet(localUrl, responseClass, null, responseListener,errorListener);
+    }
+
     public <Req extends GsonObject, Res extends GsonObject> void sendPost(
             String localUrl,
             Req requestObject,
@@ -64,5 +73,15 @@ public abstract class GsonVolleyApi {
                 url, requestJson, responseClass, headers, responseListener, errorListener
         );
         VolleyManager.getInstance(context).addToRequestQueue(request);
+    }
+
+    public <Req extends GsonObject, Res extends GsonObject> void sendPost(
+            String localUrl,
+            Req requestObject,
+            Class<Res> responseClass,
+            Response.Listener<Res> responseListener,
+            Response.ErrorListener errorListener
+    ) {
+        sendPost(localUrl, requestObject, responseClass, null, responseListener, errorListener);
     }
 }
