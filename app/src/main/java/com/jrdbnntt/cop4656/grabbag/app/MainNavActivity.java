@@ -69,7 +69,7 @@ public class MainNavActivity extends AppCompatActivity
         } else if (id == R.id.nav_current_games) {
 
         } else if (id == R.id.nav_search) {
-
+            intent = new Intent(this, MapsActivity.class);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
