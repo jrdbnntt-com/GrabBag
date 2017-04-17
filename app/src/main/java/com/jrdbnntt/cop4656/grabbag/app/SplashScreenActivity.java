@@ -9,7 +9,7 @@ import android.view.Window;
 import com.jrdbnntt.cop4656.grabbag.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 2000;
+    private static int SPLASH_TIME_OUT = 500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
