@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.jrdbnntt.cop4656.grabbag.app.MainNavActivity"
-    tools:showIn="@layout/app_bar_main_nav">
+    tools:showIn="@layout/app_bar_main_nav"
+    android:id="@+id/content_frame">
+
+    <include layout="@layout/fragment_current_games"/>
 
 </android.support.constraint.ConstraintLayout>
