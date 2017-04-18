@@ -1,18 +1,15 @@
 package com.jrdbnntt.cop4656.grabbag;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.jrdbnntt.cop4656.grabbag.app.MainScreen;
+import com.jrdbnntt.cop4656.grabbag.app.SplashLoginActivity;
 
 public class GrabBagFirebaseMsgServ extends FirebaseMessagingService {
     public static final String TAG = "GrabBagFirebaseMsgServ";
@@ -43,7 +40,7 @@ public class GrabBagFirebaseMsgServ extends FirebaseMessagingService {
             /*TODO: Replace with some sort of decision-making system.
                 Right now it just loads the main screen. Modify Intent as necessary.
              */
-            Intent resultIntent = new Intent(this, MainScreen.class);
+            Intent resultIntent = new Intent(this, SplashLoginActivity.class);
             PendingIntent testPendingIntent = PendingIntent.getActivity(this,0,resultIntent,
                     PendingIntent.FLAG_UPDATE_CURRENT);
             myNotBuilder.setContentIntent(testPendingIntent);

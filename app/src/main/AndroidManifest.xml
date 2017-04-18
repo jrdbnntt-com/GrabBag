@@ -35,7 +35,6 @@
         <activity android:name=".app.CreateGameActivity" />
         <activity android:name=".app.GameSummaryActivity" />
         <activity android:name=".app.AttackScreenActivity" />
-        <activity android:name=".app.MainScreen" />
         <activity
             android:name=".app.MainNavActivity"
             android:label="@string/title_activity_main_nav"
