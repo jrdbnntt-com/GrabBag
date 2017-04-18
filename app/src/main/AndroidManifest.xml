@@ -31,8 +31,12 @@
             android:name=".app.RegisterActivity"
             android:label="Account Registration" />
         <activity android:name=".app.GameChoiceActivity" />
-        <activity android:name=".app.JoinGameActivity" />
-        <activity android:name=".app.CreateGameActivity" />
+        <activity
+            android:name=".app.JoinGameActivity"
+            android:label="@string/join_game"/>
+        <activity
+            android:name=".app.CreateGameActivity"
+            android:label="@string/create_game"/>
         <activity android:name=".app.GameSummaryActivity" />
         <activity android:name=".app.AttackScreenActivity" />
         <activity

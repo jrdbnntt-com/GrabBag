@@ -28,6 +28,6 @@ public class PlayerModule extends ApiModule {
             Response.Listener<GameHistoryResponse> res,
             Response.ErrorListener err
     ) {
-        api.sendGet("/api/player/update_location", GameHistoryResponse.class, res, err);
+        api.sendGet("/api/player/get/game_history", GameHistoryResponse.class, res, err);
     }
 }
