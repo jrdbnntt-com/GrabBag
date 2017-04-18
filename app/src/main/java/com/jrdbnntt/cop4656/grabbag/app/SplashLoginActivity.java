@@ -81,6 +81,7 @@ public class SplashLoginActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainNavActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         finish();
     }
 
